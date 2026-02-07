@@ -1,422 +1,224 @@
 import React from 'react';
 
-// Componentes de ícones SVG - Versão Nítida
 const AchievementIcon = ({ id }) => {
   const icons = {
     1: (
-      // Hero of the Storm - Sol com raios
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+          <radialGradient id="sunGlow1m" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="70%" stopColor="#0ea5e9" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </radialGradient>
+          <filter id="sunFilter1m" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" />
           </filter>
         </defs>
-        <circle cx="50" cy="50" r="12" fill="#06b6d4" filter="url(#glow1)"/>
-        <circle cx="50" cy="20" r="3.5" fill="#06b6d4"/>
-        <circle cx="50" cy="80" r="3.5" fill="#06b6d4"/>
-        <circle cx="20" cy="50" r="3.5" fill="#06b6d4"/>
-        <circle cx="80" cy="50" r="3.5" fill="#06b6d4"/>
-        <circle cx="28" cy="28" r="3" fill="#06b6d4"/>
-        <circle cx="72" cy="28" r="3" fill="#06b6d4"/>
-        <circle cx="72" cy="72" r="3" fill="#06b6d4"/>
-        <circle cx="28" cy="72" r="3" fill="#06b6d4"/>
-        <circle cx="50" cy="50" r="6" fill="#0891b2"/>
+        <circle cx="50" cy="45" r="16" fill="url(#sunGlow1m)" />
+        <circle cx="50" cy="45" r="14" fill="url(#sunGlow1m)" opacity="0.7" />
+        <circle cx="50" cy="16" r="5" fill="#38bdf8" filter="url(#sunFilter1m)" />
+        <circle cx="50" cy="74" r="5" fill="#38bdf8" filter="url(#sunFilter1m)" />
+        <circle cx="26" cy="45" r="5" fill="#38bdf8" filter="url(#sunFilter1m)" />
+        <circle cx="74" cy="45" r="5" fill="#38bdf8" filter="url(#sunFilter1m)" />
+        <circle cx="30" cy="26" r="4" fill="#0ea5e9" />
+        <circle cx="70" cy="26" r="4" fill="#0ea5e9" />
+        <circle cx="70" cy="64" r="4" fill="#0ea5e9" />
+        <circle cx="30" cy="64" r="4" fill="#0ea5e9" />
       </svg>
     ),
     2: (
-      // Gunsmith - Mira circular verde
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
-        <circle cx="50" cy="50" r="28" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <circle cx="50" cy="50" r="18" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"/>
-        <circle cx="50" cy="50" r="8" fill="#22c55e"/>
-        <line x1="50" y1="12" x2="50" y2="22" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="50" y1="78" x2="50" y2="88" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="12" y1="50" x2="22" y2="50" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="78" y1="50" x2="88" y2="50" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
+        <defs>
+          <radialGradient id="targetGlow2m" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#4ade80" />
+            <stop offset="100%" stopColor="#22c55e" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#22c55e" strokeWidth="3" />
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#4ade80" strokeWidth="2" />
+        <circle cx="50" cy="50" r="11" fill="url(#targetGlow2m)" />
+        <line x1="50" y1="6" x2="50" y2="18" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="50" y1="82" x2="50" y2="94" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="6" y1="50" x2="18" y2="50" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="82" y1="50" x2="94" y2="50" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="50" cy="50" r="4" fill="#16a34a" />
       </svg>
     ),
     3: (
-      // Take Out Those Husks - Relâmpago azul
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
+          <linearGradient id="lightning3m" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="50%" stopColor="#0ea5e9" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+          <filter id="lightFilter3m">
+            <feGaussianBlur stdDeviation="1" />
+            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.6" />
           </filter>
         </defs>
-        <path d="M50 10 L70 40 L50 42 L75 88 L35 50 L55 48 Z" fill="#06b6d4" filter="url(#glow3)" opacity="0.95"/>
-        <path d="M50 10 L70 40 L50 42 L75 88 L35 50 L55 48 Z" fill="#0ea5e9" opacity="0.7"/>
+        <path d="M50 8 L72 44 L52 44 L80 92 L30 48 L48 48 Z" fill="url(#lightning3m)" filter="url(#lightFilter3m)" />
+        <path d="M50 8 L72 44 L52 44 L80 92 L30 48 L48 48 Z" fill="#38bdf8" opacity="0.4" />
       </svg>
     ),
     4: (
-      // Arma - Símbolo em âmbar
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow4" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
-          </filter>
+          <linearGradient id="gun4m" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fbbf24" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
         </defs>
-        <rect x="18" y="35" width="55" height="28" rx="3" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#glow4)"/>
-        <rect x="23" y="43" width="45" height="2.5" fill="#f59e0b"/>
-        <circle cx="38" cy="57" r="4" fill="#f59e0b"/>
-        <path d="M75 52 L90 45 L90 68 Z" fill="#f59e0b" filter="url(#glow4)"/>
+        <rect x="14" y="34" width="62" height="34" rx="5" fill="none" stroke="url(#gun4m)" strokeWidth="3" />
+        <rect x="18" y="42" width="54" height="3" fill="#f59e0b" />
+        <circle cx="38" cy="56" r="6" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+        <circle cx="38" cy="56" r="3" fill="#f59e0b" />
+        <path d="M78 52 L96 44 L96 68 Z" fill="url(#gun4m)" />
       </svg>
     )
   };
   return icons[id] || icons[1];
 };
 
-function Field({ label, value, badge, highlight }) {
-  return (
-    <div
-      style={{
-        flex: 1,
-        borderRadius: 12,
-        background: '#18181b',
-        padding: 12,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 4,
-        border: '1px solid #27272f'
-      }}
-    >
-      <span
-        style={{
-          fontSize: 11,
-          color: '#6b7280',
-          textTransform: 'uppercase',
-          letterSpacing: '0.5px'
-        }}
-      >
-        {label}
-      </span>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8
-        }}
-      >
-        <span
-          style={{
-            fontSize: 14,
-            color: '#f9fafb',
-            fontWeight: 500
-          }}
-        >
-          {value}
-        </span>
-        {badge && (
-          <span
-            style={{
-              fontSize: 11,
-              padding: '3px 8px',
-              borderRadius: 999,
-              background: highlight || '#22c55e33',
-              color: '#111827',
-              fontWeight: 600
-            }}
-          >
-            {badge}
-          </span>
-        )}
-      </div>
+const InfoField = ({ label, value, highlight }) => (
+  <div style={{ marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #27272f' }}>
+    <div style={{ fontSize: 11, color: '#6b7280', fontWeight: 600, marginBottom: 4 }}>
+      {label}
     </div>
-  );
-}
+    <div style={{
+      fontSize: 14,
+      color: '#f9fafb',
+      fontWeight: 500,
+      padding: highlight ? '8px 12px' : 0,
+      background: highlight ? 'rgba(79, 70, 229, 0.1)' : 'transparent',
+      borderRadius: highlight ? 8 : 0
+    }}>
+      {value}
+    </div>
+  </div>
+);
 
 function AchievementDetailsModal({ achievement, onClose, onNext, onPrev, onMarkAsSale, onPin }) {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'rgba(0,0,0,0.6)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 16,
-        zIndex: 60,
-        backdropFilter: 'blur(4px)'
-      }}
-      onClick={onClose}
-    >
-      <div
-        style={{
-          width: 480,
-          maxHeight: '90vh',
-          borderRadius: 16,
-          background: '#050507',
-          color: '#f9fafb',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.75)'
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div
-          style={{
-            padding: '16px 20px',
-            borderBottom: '1px solid #27272f',
-            display: 'flex',
-            alignItems: 'center'
-          }}
-        >
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              borderRadius: 999,
-              background: '#18181b',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginRight: 8,
-              fontSize: 16
-            }}
-          >
-            🏆
-          </div>
-          <div style={{ fontSize: 16, fontWeight: 500 }}>
-            Conquistas neste jogo
-          </div>
+  const handleBackdropClick = (e) => {
+    if (e.currentTarget === e.target) onClose();
+  };
 
-          <button
-            onClick={onClose}
-            style={{
-              marginLeft: 'auto',
-              width: 32,
-              height: 32,
-              borderRadius: 999,
-              border: 'none',
-              background: '#18181b',
-              color: '#e5e7eb',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'background 0.2s ease',
-              fontSize: 16
-            }}
-            onMouseEnter={(e) => e.target.style.background = '#27272f'}
-            onMouseLeave={(e) => e.target.style.background = '#18181b'}
-          >
+  const BUTTON_STYLE = {
+    flex: '1 1 auto',
+    padding: 10,
+    borderRadius: 8,
+    border: 'none',
+    background: '#18181b',
+    color: '#e5e7eb',
+    cursor: 'pointer',
+    fontSize: 14,
+    transition: 'all 0.2s ease'
+  };
+
+  return (
+    <div onClick={handleBackdropClick} style={{
+      position: 'fixed',
+      inset: 0,
+      background: 'rgba(0, 0, 0, 0.7)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 16,
+      zIndex: 50,
+      backdropFilter: 'blur(4px)'
+    }}>
+      <div style={{
+        width: '100%',
+        maxWidth: 480,
+        maxHeight: '90vh',
+        borderRadius: 16,
+        background: '#050507',
+        color: '#f9fafb',
+        overflow: 'auto',
+        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.75)',
+        display: 'flex',
+        flexDirection: 'column'
+      }} onClick={(e) => e.stopPropagation()}>
+        
+        {/* Header */}
+        <div style={{
+          padding: 16,
+          borderBottom: '1px solid #27272f',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          <span style={{ fontSize: 16, fontWeight: 600 }}>Detalhes da Conquista</span>
+          <button onClick={onClose} style={{
+            width: 32,
+            height: 32,
+            borderRadius: 999,
+            border: 'none',
+            background: '#18181b',
+            color: '#e5e7eb',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
             ✕
           </button>
         </div>
 
         {/* Content */}
-        <div
-          style={{
-            padding: '16px 20px',
-            flex: 1,
-            overflowY: 'auto',
+        <div style={{ flex: 1, padding: 20, overflowY: 'auto' }}>
+          <div style={{
+            width: 70,
+            height: 70,
+            borderRadius: 12,
+            background: achievement.iconColor,
+            marginBottom: 16,
             display: 'flex',
-            flexDirection: 'column',
-            gap: 12
-          }}
-        >
-          {/* Icon + Title */}
-          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-            <div
-              style={{
-                width: 56,
-                height: 56,
-                borderRadius: 12,
-                background: achievement.iconColor,
-                flexShrink: 0,
-                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              <AchievementIcon id={achievement.id} />
-            </div>
-            <div>
-              <div
-                style={{
-                  fontSize: 18,
-                  fontWeight: 600,
-                  marginBottom: 4
-                }}
-              >
-                {achievement.title}
-              </div>
-              <div
-                style={{
-                  fontSize: 13,
-                  color: '#9ca3af'
-                }}
-              >
-                {achievement.description}
-              </div>
-            </div>
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <AchievementIcon id={achievement.id} />
           </div>
 
-          {/* Platform / Nickname */}
-          <div style={{ display: 'flex', gap: 12 }}>
-            <Field 
-              label="plataforma:" 
-              value={achievement.platform}
-            />
-            <Field 
-              label="nickname:" 
-              value={achievement.nickname}
-            />
+          <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 12 }}>
+            {achievement.title}
           </div>
 
-          {/* Evento */}
-          <Field label="evento:" value={achievement.event} />
-
-          {/* Dates */}
-          <div style={{ display: 'flex', gap: 12 }}>
-            <Field label="data da conquista:" value={achievement.date} />
-            <Field label="data de validade:" value={achievement.validUntil} />
+          <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 20 }}>
+            {achievement.description}
           </div>
 
-          {/* Rarity / Players */}
-          <div style={{ display: 'flex', gap: 12 }}>
-            <Field
-              label="tipo de conquista:"
-              value=""
-              badge={achievement.rarity}
-              highlight={achievement.rarityColor}
-            />
-            <Field label="% de players:" value={achievement.playersPercent} />
-          </div>
-
-          {/* Description */}
-          <Field label="descrição:" value={achievement.description || '--'} />
+          <InfoField label="Plataforma" value={achievement.platform} />
+          <InfoField label="Jogador" value={achievement.nickname} />
+          <InfoField label="Evento" value={achievement.event} />
+          <InfoField label="Data" value={achievement.date} />
+          <InfoField label="Raridade" value={achievement.rarity} highlight />
+          <InfoField label="Desbloqueado por" value={achievement.playersPercent} />
         </div>
 
-        {/* Footer Buttons */}
-        <div
-          style={{
-            padding: '12px 20px 16px 20px',
-            borderTop: '1px solid #27272f',
-            display: 'flex',
-            gap: 12
-          }}
-        >
-          <button
-            onClick={onPrev}
-            style={{
-              flex: 1,
-              borderRadius: 999,
-              height: 44,
-              border: 'none',
-              background: '#18181b',
-              color: '#f9fafb',
-              fontSize: 18,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 8,
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = '#27272f';
-              e.target.style.transform = 'translateX(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = '#18181b';
-              e.target.style.transform = 'translateX(0)';
-            }}
-            title="Anterior"
-          >
-            ←
+        {/* Footer */}
+        <div style={{
+          padding: 16,
+          borderTop: '1px solid #27272f',
+          display: 'flex',
+          gap: 8,
+          justifyContent: 'space-between',
+          flexWrap: 'wrap'
+        }}>
+          <button onClick={onPrev} style={BUTTON_STYLE} onMouseEnter={(e) => e.target.style.background = '#27272f'} onMouseLeave={(e) => e.target.style.background = '#18181b'}>
+            ← Anterior
           </button>
-          <button
-            onClick={() => onMarkAsSale(achievement)}
-            style={{
-              flex: 3,
-              borderRadius: 999,
-              height: 44,
-              border: 'none',
-              background: '#22c55e',
-              color: '#111827',
-              fontSize: 13,
-              fontWeight: 600,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 8,
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = '#16a34a';
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 10px 15px rgba(34, 197, 94, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = '#22c55e';
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = 'none';
-            }}
-            title="Marcar como venda"
-          >
-            💲 marcar como venda
+          
+          <button onClick={() => onMarkAsSale(achievement)} style={BUTTON_STYLE} onMouseEnter={(e) => e.target.style.background = '#27272f'} onMouseLeave={(e) => e.target.style.background = '#18181b'}>
+            💲 Venda
           </button>
-          <button
-            onClick={() => onPin(achievement)}
-            style={{
-              flex: 2,
-              borderRadius: 999,
-              height: 44,
-              border: 'none',
-              background: '#18181b',
-              color: '#f9fafb',
-              fontSize: 13,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 8,
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = '#27272f';
-              e.target.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = '#18181b';
-              e.target.style.transform = 'scale(1)';
-            }}
-            title="Fixar"
-          >
-            ⭐ fixar
+
+          <button onClick={() => onPin(achievement)} style={BUTTON_STYLE} onMouseEnter={(e) => e.target.style.background = '#27272f'} onMouseLeave={(e) => e.target.style.background = '#18181b'}>
+            ⭐ Fixar
           </button>
-          <button
-            onClick={onNext}
-            style={{
-              flex: 1,
-              borderRadius: 999,
-              height: 44,
-              border: 'none',
-              background: '#f9fafb',
-              color: '#111827',
-              fontSize: 18,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateX(2px)';
-              e.target.style.boxShadow = '0 10px 20px rgba(249, 250, 251, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateX(0)';
-              e.target.style.boxShadow = 'none';
-            }}
-            title="Próximo"
-          >
-            →
+
+          <button onClick={onNext} style={BUTTON_STYLE} onMouseEnter={(e) => e.target.style.background = '#27272f'} onMouseLeave={(e) => e.target.style.background = '#18181b'}>
+            Próximo →
           </button>
         </div>
       </div>

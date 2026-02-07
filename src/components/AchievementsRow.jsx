@@ -1,183 +1,144 @@
 import React from 'react';
 
-// Componentes de ícones SVG - Versão Nítida
 const AchievementIcon = ({ id }) => {
   const icons = {
     1: (
-      // Hero of the Storm - Sol com raios
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+          <radialGradient id="sunGlow1r" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="70%" stopColor="#0ea5e9" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </radialGradient>
+          <filter id="sunFilter1r" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" />
           </filter>
         </defs>
-        <circle cx="50" cy="50" r="12" fill="#06b6d4" filter="url(#glow1)"/>
-        <circle cx="50" cy="20" r="3.5" fill="#06b6d4"/>
-        <circle cx="50" cy="80" r="3.5" fill="#06b6d4"/>
-        <circle cx="20" cy="50" r="3.5" fill="#06b6d4"/>
-        <circle cx="80" cy="50" r="3.5" fill="#06b6d4"/>
-        <circle cx="28" cy="28" r="3" fill="#06b6d4"/>
-        <circle cx="72" cy="28" r="3" fill="#06b6d4"/>
-        <circle cx="72" cy="72" r="3" fill="#06b6d4"/>
-        <circle cx="28" cy="72" r="3" fill="#06b6d4"/>
-        <circle cx="50" cy="50" r="6" fill="#0891b2"/>
+        <circle cx="50" cy="45" r="16" fill="url(#sunGlow1r)" />
+        <circle cx="50" cy="45" r="14" fill="url(#sunGlow1r)" opacity="0.7" />
+        <circle cx="50" cy="16" r="5" fill="#38bdf8" filter="url(#sunFilter1r)" />
+        <circle cx="50" cy="74" r="5" fill="#38bdf8" filter="url(#sunFilter1r)" />
+        <circle cx="26" cy="45" r="5" fill="#38bdf8" filter="url(#sunFilter1r)" />
+        <circle cx="74" cy="45" r="5" fill="#38bdf8" filter="url(#sunFilter1r)" />
+        <circle cx="30" cy="26" r="4" fill="#0ea5e9" />
+        <circle cx="70" cy="26" r="4" fill="#0ea5e9" />
+        <circle cx="70" cy="64" r="4" fill="#0ea5e9" />
+        <circle cx="30" cy="64" r="4" fill="#0ea5e9" />
       </svg>
     ),
     2: (
-      // Gunsmith - Mira circular verde
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
-        <circle cx="50" cy="50" r="28" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <circle cx="50" cy="50" r="18" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"/>
-        <circle cx="50" cy="50" r="8" fill="#22c55e"/>
-        <line x1="50" y1="12" x2="50" y2="22" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="50" y1="78" x2="50" y2="88" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="12" y1="50" x2="22" y2="50" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
-        <line x1="78" y1="50" x2="88" y2="50" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round"/>
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
+        <defs>
+          <radialGradient id="targetGlow2r" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#4ade80" />
+            <stop offset="100%" stopColor="#22c55e" />
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#22c55e" strokeWidth="3" />
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#4ade80" strokeWidth="2" />
+        <circle cx="50" cy="50" r="11" fill="url(#targetGlow2r)" />
+        <line x1="50" y1="6" x2="50" y2="18" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="50" y1="82" x2="50" y2="94" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="6" y1="50" x2="18" y2="50" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <line x1="82" y1="50" x2="94" y2="50" stroke="#22c55e" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="50" cy="50" r="4" fill="#16a34a" />
       </svg>
     ),
     3: (
-      // Take Out Those Husks - Relâmpago azul
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
+          <linearGradient id="lightning3r" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="50%" stopColor="#0ea5e9" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+          <filter id="lightFilter3r">
+            <feGaussianBlur stdDeviation="1" />
+            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.6" />
           </filter>
         </defs>
-        <path d="M50 10 L70 40 L50 42 L75 88 L35 50 L55 48 Z" fill="#06b6d4" filter="url(#glow3)" opacity="0.95"/>
-        <path d="M50 10 L70 40 L50 42 L75 88 L35 50 L55 48 Z" fill="#0ea5e9" opacity="0.7"/>
+        <path d="M50 8 L72 44 L52 44 L80 92 L30 48 L48 48 Z" fill="url(#lightning3r)" filter="url(#lightFilter3r)" />
+        <path d="M50 8 L72 44 L52 44 L80 92 L30 48 L48 48 Z" fill="#38bdf8" opacity="0.4" />
       </svg>
     ),
     4: (
-      // Arma - Símbolo em âmbar
-      <svg viewBox="0 0 100 100" width="36" height="36" fill="none">
+      <svg viewBox="0 0 100 100" width="48" height="48" fill="none">
         <defs>
-          <filter id="glow4" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
-          </filter>
+          <linearGradient id="gun4r" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fbbf24" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
         </defs>
-        <rect x="18" y="35" width="55" height="28" rx="3" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#glow4)"/>
-        <rect x="23" y="43" width="45" height="2.5" fill="#f59e0b"/>
-        <circle cx="38" cy="57" r="4" fill="#f59e0b"/>
-        <path d="M75 52 L90 45 L90 68 Z" fill="#f59e0b" filter="url(#glow4)"/>
+        <rect x="14" y="34" width="62" height="34" rx="5" fill="none" stroke="url(#gun4r)" strokeWidth="3" />
+        <rect x="18" y="42" width="54" height="3" fill="#f59e0b" />
+        <circle cx="38" cy="56" r="6" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+        <circle cx="38" cy="56" r="3" fill="#f59e0b" />
+        <path d="M78 52 L96 44 L96 68 Z" fill="url(#gun4r)" />
       </svg>
     )
   };
   return icons[id] || icons[1];
 };
 
-function AchievementsRow({ achievement, onClick, compareMode }) {
+function AchievementsRow({ achievement, compareMode, onOpen }) {
+  const avatarColor = achievement.iconColor;
+  
   return (
-    <button
-      onClick={onClick}
-      style={{
-        width: '100%',
-        padding: '16px 20px',
-        background: 'transparent',
-        border: 'none',
-        cursor: 'pointer',
+    <button onClick={onOpen} style={{
+      width: '100%',
+      padding: 12,
+      borderRadius: 12,
+      border: 'none',
+      background: '#18181b',
+      color: '#f9fafb',
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      transition: 'all 0.2s ease',
+      marginBottom: 8
+    }} onMouseEnter={(e) => {
+      e.currentTarget.style.background = '#27272f';
+      e.currentTarget.style.transform = 'translateX(2px)';
+    }} onMouseLeave={(e) => {
+      e.currentTarget.style.background = '#18181b';
+      e.currentTarget.style.transform = 'translateX(0)';
+    }}>
+      <div style={{
+        width: 44,
+        height: 44,
+        borderRadius: 8,
+        background: avatarColor,
         display: 'flex',
         alignItems: 'center',
-        color: '#f9fafb',
-        transition: 'background 0.2s ease'
-      }}
-      onMouseEnter={(e) => e.currentTarget.style.background = '#111214'}
-      onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-    >
-      <div
-        style={{
-          width: 56,
-          height: 56,
-          borderRadius: 12,
-          background: achievement.iconColor,
-          marginRight: 16,
-          flexShrink: 0,
-          border: '2px solid #0ea5e9',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
+        justifyContent: 'center',
+        flexShrink: 0
+      }}>
         <AchievementIcon id={achievement.id} />
       </div>
 
-      <div style={{ flex: 1, textAlign: 'left' }}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 6,
-            marginBottom: 4
-          }}
-        >
-          <span style={{ fontSize: 14, fontWeight: 600 }}>
-            {achievement.title}
-          </span>
-          <span
-            style={{
-              fontSize: 14,
-              color: '#fbbf24'
-            }}
-          >
-            ⓘ
-          </span>
+      <div style={{ flex: 1, textAlign: 'left', minWidth: 0 }}>
+        <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 2 }}>
+          {achievement.title}
         </div>
-        <div
-          style={{
-            fontSize: 12,
-            color: '#9ca3af',
-            marginBottom: 4
-          }}
-        >
-          {achievement.description}
-        </div>
-        <div
-          style={{
-            fontSize: 11,
-            color: '#6b7280',
-            marginTop: 2
-          }}
-        >
+        <div style={{ fontSize: 11, color: '#9ca3af', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {achievement.progressText}
         </div>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          gap: 6,
-          marginLeft: 12,
-          flexShrink: 0
-        }}
-      >
-        {compareMode ? (
-          <>
-            <img src="https://i.pravatar.cc/28?img=11" alt="user1" style={{ width: 28, height: 28, borderRadius: 999 }} />
-            <img src="https://i.pravatar.cc/28?img=12" alt="user2" style={{ width: 28, height: 28, borderRadius: 999 }} />
-          </>
-        ) : (
-          <>
-            <img
-              src={`https://i.pravatar.cc/28?img=${achievement.id}`}
-              alt="user1"
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: 999,
-                background: '#111214'
-              }}
-            />
-            <img
-              src={`https://i.pravatar.cc/28?img=${achievement.id + 1}`}
-              alt="user2"
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: 999,
-                background: '#111214'
-              }}
-            />
-          </>
-        )}
+      <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
+        <img src={`https://i.pravatar.cc/28?img=${compareMode ? 11 : achievement.id}`} alt="Avatar" style={{
+          width: 28,
+          height: 28,
+          borderRadius: 6,
+          border: '2px solid #4f46e5'
+        }} />
+        <img src={`https://i.pravatar.cc/28?img=${compareMode ? 12 : (achievement.id + 5)}`} alt="Avatar" style={{
+          width: 28,
+          height: 28,
+          borderRadius: 6,
+          border: '2px solid #8b5cf6'
+        }} />
       </div>
     </button>
   );
